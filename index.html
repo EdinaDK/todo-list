@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Список дел</title>
+</head>
+<body>
+<h2 class="title section">Список дел</h2>
+<p></p>
+<div>
+    <input type="text" id="input" placeholder="сюда можно ввести что-то..." onkeypress="handleKeyPress(event)"/>
+    <button type="submit" class = "add-todo" id="addTodoButton">добавить дело</button>
+    <p></p>
+    <ul id="todoUL">
+    </ul>
+</div>
+<div class="filter">
+    <span id="fullSpan" class="filterBtn" onclick="showAll()">Все</span>
+    <span id="checkedSpan" class="filterBtn" onclick="showCompleted()">Выполненные</span>
+    <span id="unfinishedSpan" class="filterBtn" onclick="showUncompleted()">В процессе</span>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
