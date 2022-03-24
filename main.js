@@ -73,7 +73,6 @@ function showAll() {
             todoList.item(i).classList.remove('hide');
         }
     }
-    updateCounters();
 }
 
 // Показать выполненные дела
@@ -88,7 +87,6 @@ function showChecked() {
             todoList.item(i).classList.add('hide');
         }
     }
-    updateCounters();
 }
 
 // Показать несделанное
@@ -103,25 +101,17 @@ function showUnfinished() {
             todoList.item(i).classList.remove('hide');
         }
     }
-    updateCounters();
 }
 
 function updateCounters() {
     const allCount = document.getElementById('allCount');
     let doneCount = document.getElementById('doneCount');
     let notDoneCount = document.getElementById('notDoneCount');
-    const todoList = document.getElementsByTagName("li");
+    let allNum = document.querySelectorAll('li').length.toString();
+    let doneNum = document.querySelectorAll('.completed').length.toString()
+    let notDoneNum = allNum - doneNum;
 
-    allCount.innerText = document.querySelectorAll('li').length.toString();
-
-    /*for (let i = 0; i < todoList.length; i++) {
-        if (todoList.item(i).classList.contains('completed')) {
-            doneCount++;
-        }
-        else {
-        notDoneCount++;
-        }
-    }*/
-    doneCount.innerText = document.querySelectorAll('li.completed').length.toString();
-    notDoneCount.innerText = document.querySelectorAll('li').length.toString();
+    allCount.innerText = allNum;
+    doneCount.innerText = doneNum;
+    notDoneCount.innerText = notDoneNum.toString();
 }
