@@ -11,11 +11,12 @@ function toLocal() {
 
 todoUL.addEventListener('click', function (ev) {
     if(ev.target.tagName === "LI") {
-        ev.target.classList.toggle('completed');
+        ev.target.classList.add('completed');
             toLocal();
     } else if (ev.target.tagName === "SPAN") {
         var div = ev.target.parentNode;
         div.remove();
+        updateCounters();
         toLocal();
     }}, false);
 
@@ -47,6 +48,7 @@ function newElement() {
     }
 
     toLocal();
+    updateCounters();
 }
 
 function handleKeyPress(e){
@@ -66,10 +68,12 @@ function showAll() {
     const todoList = document.getElementsByTagName("li");
 
     for (let i = 0; i < todoList.length; i++) {
-        if (todoList.item(i).className === 'hide') {
-            todoList.item(i).className = '';
+        if (todoList.item(i).classList.contains('hide')) {
+            //todoList.item(i).style.display = 'flex';
+            todoList.item(i).classList.remove('hide');
         }
     }
+    updateCounters();
 }
 
 // Показать выполненные дела
@@ -77,19 +81,47 @@ function showChecked() {
     const todoList = document.getElementsByTagName("li");
 
     for (let i = 0; i < todoList.length; i++) {
-        if (todoList.item(i).classList.value !== 'completed') {
-            todoList.item(i).className = 'hide';
+        if (todoList.item(i).classList.contains('completed')) {
+            todoList.item(i).classList.remove('hide');
+        }
+        else {
+            todoList.item(i).classList.add('hide');
         }
     }
+    updateCounters();
 }
 
-// Показать несделанное (девочки, тут баг, я хз что делать)
+// Показать несделанное
 function showUnfinished() {
     const todoList = document.getElementsByTagName("li");
 
     for (let i = 0; i < todoList.length; i++) {
-        if (todoList.item(i).classList.value === 'completed') {
-            todoList.item(i).className = 'hide';
+        if (todoList.item(i).classList.contains ('completed')) {
+            todoList.item(i).classList.add('hide');
+        }
+        else {
+            todoList.item(i).classList.remove('hide');
         }
     }
+    updateCounters();
+}
+
+function updateCounters() {
+    const allCount = document.getElementById('allCount');
+    let doneCount = document.getElementById('doneCount');
+    let notDoneCount = document.getElementById('notDoneCount');
+    const todoList = document.getElementsByTagName("li");
+
+    allCount.innerText = document.querySelectorAll('li').length.toString();
+
+    /*for (let i = 0; i < todoList.length; i++) {
+        if (todoList.item(i).classList.contains('completed')) {
+            doneCount++;
+        }
+        else {
+        notDoneCount++;
+        }
+    }*/
+    doneCount.innerText = document.querySelectorAll('li.completed').length.toString();
+    notDoneCount.innerText = document.querySelectorAll('li').length.toString();
 }
