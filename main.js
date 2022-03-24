@@ -13,6 +13,7 @@ todoUL.addEventListener('click', function (ev) {
     if(ev.target.tagName === "LI") {
         ev.target.classList.add('completed');
             toLocal();
+        updateCounters();
     } else if (ev.target.tagName === "SPAN") {
         var div = ev.target.parentNode;
         div.remove();
@@ -108,7 +109,7 @@ function updateCounters() {
     let doneCount = document.getElementById('doneCount');
     let notDoneCount = document.getElementById('notDoneCount');
     let allNum = document.querySelectorAll('li').length.toString();
-    let doneNum = document.querySelectorAll('.completed').length.toString()
+    let doneNum = document.querySelectorAll('li.completed').length.toString()
     let notDoneNum = allNum - doneNum;
 
     allCount.innerText = allNum;
