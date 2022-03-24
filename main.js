@@ -21,6 +21,14 @@ todoUL.addEventListener('click', function (ev) {
         toLocal();
     }}, false);
 
+// Выбираем кнопку
+const btn = document.querySelector('.btn-toggle');
+// Отслеживаем щелчок по кнопке
+btn.addEventListener('click', function(ev) {
+    // Затем переключаем (добавляем/удаляем) класс .dark-theme для body
+    document.body.classList.toggle('dark-theme');
+})
+
 function newElement() {
     var li = document.createElement("li");
     var inputValue = document.getElementById("input").value;
@@ -116,3 +124,4 @@ function updateCounters() {
     doneCount.innerText = doneNum;
     notDoneCount.innerText = notDoneNum.toString();
 }
+

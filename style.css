@@ -5,12 +5,16 @@ body {
     text-align: center;
 }
 
+body.dark-theme {
+    background: rgba(18, 18, 18, 0.82);
+}
+
 h2.title {
     border-top:5px solid #E0DBDE;
     border-bottom:5px solid #E0DBDE;
     font-size:70px;
     text-align:center;
-    margin-top:40px;
+    margin-top:20px;
     margin-bottom:5px;
     text-transform:uppercase;
     font-family:'Russo One',sans-serif;
@@ -58,6 +62,7 @@ input {
     margin-left: auto;
 }
 
+
 @keyframes bounce {
     0%, 20%, 60%, 100% {
         transform: translateY(0);
@@ -75,11 +80,11 @@ input {
     }
 }
 
-button:hover {
+button.add-todo:hover {
     animation: bounce 1s;
 }
 
-button {
+button.add-todo {
     height: 36px;
     box-shadow: 10px 10px 5px #120033;
     background: linear-gradient(to right, #59b6f8, #d477f8);
@@ -102,6 +107,22 @@ ul li {
     position: relative;
     padding: 12px 8px 12px 40px;
     background: linear-gradient(to right, #3f509f, #ee6bb5);
+    color: white;
+    font-size: 20px;
+    font-family:'Russo One', sans-serif;
+    transition: 0.2s;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul li.dark-theme {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: linear-gradient(to right, #a4accb, #c7aabd);
     color: white;
     font-size: 20px;
     font-family:'Russo One', sans-serif;
@@ -174,4 +195,19 @@ ul li.completed::before {
     display: none;
 }
 
-
+.btn-toggle {
+    position: absolute;
+    top: 69px;
+    left: 1800px;
+    bottom: auto;
+    right: 40px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    font-family:'Russo One', sans-serif;
+    font-size: 40px;
+    color: #888;
+}
+.btn-toggle:hover {
+    color: #59b6f8;
+    cursor: pointer;
+}
