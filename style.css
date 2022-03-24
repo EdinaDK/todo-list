@@ -6,7 +6,7 @@ body {
 }
 
 body.dark-theme {
-    background: rgba(18, 18, 18, 0.93);
+    background: rgb(18, 18, 18);
 }
 
 h2.title {
@@ -107,22 +107,6 @@ ul li {
     position: relative;
     padding: 12px 8px 12px 40px;
     background: linear-gradient(to right, #3f509f, #ee6bb5);
-    color: white;
-    font-size: 20px;
-    font-family:'Russo One', sans-serif;
-    transition: 0.2s;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-ul li.dark-theme {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    background: linear-gradient(to right, #a4accb, #c7aabd);
     color: white;
     font-size: 20px;
     font-family:'Russo One', sans-serif;
