@@ -10,11 +10,11 @@ body.dark-theme {
 }
 
 .room {
-background: black;
+background: black !important;
 }
 
 .room:hover {
-background: green;
+background: green !important;
 }
 
 h2.title {
