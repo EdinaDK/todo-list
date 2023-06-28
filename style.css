@@ -9,6 +9,14 @@ body.dark-theme {
     background: rgb(18, 18, 18);
 }
 
+h3 {
+    font-family:'Russo One',sans-serif;
+}
+
+h3.dark-theme {
+    color: white
+}
+
 .room {
 background: black !important;
 }
