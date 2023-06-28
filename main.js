@@ -27,6 +27,7 @@ const btn = document.querySelector('.btn-toggle');
 btn.addEventListener('click', function(ev) {
     // Затем переключаем (добавляем/удаляем) класс .dark-theme для body
     document.body.classList.toggle('dark-theme');
+    document.getElementByTag('h3').classList.toggle('dark-theme');
 })
 
 function newElement() {
