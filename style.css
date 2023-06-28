@@ -9,6 +9,14 @@ body.dark-theme {
     background: rgb(18, 18, 18);
 }
 
+.room {
+background: black;
+}
+
+.room:hover {
+background: green;
+}
+
 h2.title {
     border-top:5px solid #E0DBDE;
     border-bottom:5px solid #E0DBDE;
